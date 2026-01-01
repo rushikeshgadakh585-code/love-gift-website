@@ -3,152 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For You ❤️</title>
-
-<style>
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #ffb6c1, #ffc0cb);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.card {
-  background: white;
-  border-radius: 20px;
-  padding: 25px;
-  text-align: center;
-  width: 90%;
-  max-width: 360px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-  animation: fadeIn 1.5s ease;
-}
-
-h1 {
-  color: #ff4d6d;
-  margin-bottom: 10px;
-}
-
-p {
-  color: #555;
-  font-size: 16px;
-}
-
-.heart {
-  font-size: 50px;
-  animation: beat 1s infinite;
-  margin: 15px 0;
-}
-
-button {
-  background: #ff4d6d;
-  border: none;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 25px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #ff335c;
-}
-
-.hidden {
-  display: none;
-}
-
-input {
-  padding: 10px;
-  border-radius: 12px;
-  border: 2px solid #ff4d6d;
-  outline: none;
-  text-align: center;
-  margin-top: 10px;
-}
-
-#error-msg {
-  color: red;
-  margin-top: 10px;
-}
-
-@keyframes beat {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-</style>
-</head>
-
-<body>
-
-<!-- PASSWORD SCREEN -->
-<div id="password-screen" class="card">
-  <h1>Enter Password 💞</h1>
-  <input type="password" id="password-input" placeholder="Password">
-  <br>
-  <button id="enter-btn">Unlock 💗</button>
-  <p id="error-msg"></p>
-</div>
-
-<!-- MAIN CARD CONTENT -->
-<div id="main-card" class="card hidden">
-  <h1>Hey Sneha ❤️</h1>
-  <p>This little website is just for you</p>
-
-  <div class="heart">💖</div>
-
-  <button onclick="showMessage()">Tap Me</button>
-
-  <p id="msg" class="hidden">
-    You make my world brighter every single day 🌸<br>
-    Happy New Year Sonu ❤️
-  </p>
-</div>
-
-<script>
-// PASSWORD LOGIC
-const correctPassword = "rushisneha";
-
-document.getElementById("enter-btn").addEventListener("click", () => {
-  const input = document.getElementById("password-input").value;
-  const errorMsg = document.getElementById("error-msg");
-
-  if(input === correctPassword){
-    document.getElementById("password-screen").classList.add("hidden");
-    document.getElementById("main-card").classList.remove("hidden");
-  } else {
-    errorMsg.textContent = "❌ Wrong password, try again!";
-  }
-});
-
-// SHOW MESSAGE BUTTON
-function showMessage() {
-  document.getElementById("msg").classList.remove("hidden");
-}
-</script>
-
-</body>
-
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Just For You ❤️</title>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
+<style>
 * {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
@@ -160,60 +19,83 @@ body {
   overflow-x: hidden;
 }
 
-section {
-  min-height: 100vh;
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-h1, h2 {
-  color: #ff2e63;
-}
-
-p {
-  color: #444;
-  font-size: 16px;
-}
-
-.btn {
-  background: #ff2e63;
-  color: white;
-  padding: 12px 30px;
-  border-radius: 30px;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
+/* COMMON CARD */
 .card {
   background: white;
   border-radius: 20px;
   padding: 25px;
-  max-width: 350px;
+  text-align: center;
+  width: 90%;
+  max-width: 360px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-  animation: fadeUp 1.5s ease;
+  animation: fadeUp 1.2s ease;
+  margin: 20px auto;
 }
 
+/* PASSWORD SCREEN */
+#password-screen {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  padding: 10px;
+  border-radius: 12px;
+  border: 2px solid #ff4d6d;
+  outline: none;
+  text-align: center;
+  margin-top: 10px;
+}
+
+button {
+  background: #ff4d6d;
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+button:hover {
+  background: #ff335c;
+}
+
+.hidden {
+  display: none;
+}
+
+#error-msg {
+  color: red;
+  margin-top: 10px;
+}
+
+/* HEART ANIMATION */
+.heart {
+  font-size: 50px;
+  animation: beat 1s infinite;
+  margin: 15px 0;
+}
+
+/* SECTIONS */
+section {
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* FLOATING HEARTS */
 .hearts span {
   position: fixed;
   bottom: -20px;
   font-size: 20px;
   animation: floatUp 6s linear infinite;
-}
-
-@keyframes floatUp {
-  from { transform: translateY(0); opacity: 1; }
-  to { transform: translateY(-120vh); opacity: 0; }
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 .photo-box {
@@ -226,65 +108,112 @@ p {
   justify-content: center;
   color: #ff2e63;
   font-size: 14px;
-  margin: 15px 0;
+  margin: 10px 0;
+}
+
+@keyframes beat {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-120vh); opacity: 0; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- Floating Hearts -->
-<div class="hearts">
-  <span style="left:10%">💖</span>
-  <span style="left:30%">💗</span>
-  <span style="left:50%">💘</span>
-  <span style="left:70%">❤️</span>
-  <span style="left:90%">💕</span>
+<!-- PASSWORD SCREEN -->
+<div id="password-screen">
+  <div class="card">
+    <h1>Enter Password 💞</h1>
+    <input type="password" id="password-input" placeholder="Password">
+    <br>
+    <button onclick="unlock()">Unlock 💗</button>
+    <p id="error-msg"></p>
+  </div>
 </div>
 
-<!-- Section 1 -->
-<section>
-  <div class="card">
-    <h1>Hey You ❤️</h1>
-    <p>I made this little world just for you</p>
-    <button class="btn" onclick="nextSection()">Start ✨</button>
-  </div>
-</section>
+<!-- MAIN WEBSITE (HIDDEN INITIALLY) -->
+<div id="main-website" class="hidden">
 
-<!-- Section 2 -->
-<section id="sec2" style="display:none;">
-  <div class="card">
-    <h2>You Mean A Lot 💕</h2>
-    <p>
-      Every smile of yours makes my day better.<br>
-      This New Year is special because of you.
-    </p>
-    <button class="btn" onclick="nextSection2()">Next 💫</button>
+  <!-- Floating Hearts -->
+  <div class="hearts">
+    <span style="left:10%">💖</span>
+    <span style="left:30%">💗</span>
+    <span style="left:50%">💘</span>
+    <span style="left:70%">❤️</span>
+    <span style="left:90%">💕</span>
   </div>
-</section>
 
-<!-- Section 3 -->
-<section id="sec3" style="display:none;">
-  <div class="card">
-    <h2>Our Moments 📸</h2>
-    <div class="photo-box">Your Photos Will Be Here</div>
-    <div class="photo-box">Add Memories ❤️</div>
-    <button class="btn" onclick="nextSection3()">Final 🎆</button>
-  </div>
-</section>
+  <!-- Section 1 -->
+  <section>
+    <div class="card">
+      <h1>Hey You ❤️</h1>
+      <p>I made this little world just for you</p>
+      <button class="btn" onclick="nextSection()">Start ✨</button>
+    </div>
+  </section>
 
-<!-- Section 4 -->
-<section id="sec4" style="display:none;">
-  <div class="card">
-    <h1>Happy New Year ❤️🎆</h1>
-    <p>
-      I wish this year brings us more laughs,<br>
-      more memories, and endless love 💖
-    </p>
-  </div>
-</section>
+  <!-- Section 2 -->
+  <section id="sec2" style="display:none;">
+    <div class="card">
+      <h2>You Mean A Lot 💕</h2>
+      <p>
+        Every smile of yours makes my day better.<br>
+        This New Year is special because of you.
+      </p>
+      <button class="btn" onclick="nextSection2()">Next 💫</button>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section id="sec3" style="display:none;">
+    <div class="card">
+      <h2>Our Moments 📸</h2>
+      <div class="photo-box">Your Photos Will Be Here</div>
+      <div class="photo-box">Add Memories ❤️</div>
+      <button class="btn" onclick="nextSection3()">Final 🎆</button>
+    </div>
+  </section>
+
+  <!-- Section 4 -->
+  <section id="sec4" style="display:none;">
+    <div class="card">
+      <h1>Happy New Year ❤️🎆</h1>
+      <p>
+        I wish this year brings us more laughs,<br>
+        more memories, and endless love 💖
+      </p>
+    </div>
+  </section>
+
+</div>
 
 <script>
+const correctPassword = "rushisneha";
+
+function unlock() {
+  const input = document.getElementById("password-input").value;
+  const error = document.getElementById("error-msg");
+
+  if(input === correctPassword){
+    document.getElementById("password-screen").style.display = "none";
+    document.getElementById("main-website").classList.remove("hidden");
+    window.scrollTo(0,0);
+  } else {
+    error.textContent = "❌ Wrong password, try again!";
+  }
+}
+
+// Section navigation
 function nextSection() {
   document.getElementById("sec2").style.display = "flex";
   window.scrollTo(0, document.body.scrollHeight);
@@ -303,6 +232,3 @@ function nextSection3() {
 
 </body>
 </html>
-
-
-
