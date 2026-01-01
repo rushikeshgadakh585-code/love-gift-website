@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(180deg, #ffafc0, #ffe6eb);
+  color: #d63384;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* PASSWORD SCREEN AND MAIN CARD */
+.screen, .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  width: 90%;
+  max-width: 360px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  animation: fadeIn 1.5s ease;
+}
+
+.screen input, .card input {
+  padding: 10px;
+  border: 2px solid #ff7ea8;
+  border-radius: 12px;
+  outline: none;
+  text-align: center;
+  margin-bottom: 10px;
+  width: 80%;
+}
+
+button {
+  background-color: #ff7ea8;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #ff4f88;
+}
+
+.hidden {
+  display: none;
+}
+
+/* HEART ANIMATION */
+.heart {
+  font-size: 50px;
+  animation: beat 1s infinite;
+  margin: 15px 0;
+}
+
+/* MESSAGE INSIDE CARD */
+#msg {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #d63384;
+}
+
+/* ANIMATIONS */
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}

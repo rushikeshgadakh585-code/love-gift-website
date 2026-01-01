@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffb6c1, #ffc0cb);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  width: 90%;
+  max-width: 360px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  animation: fadeIn 1.5s ease;
+}
+
+h1 {
+  color: #ff4d6d;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #555;
+  font-size: 16px;
+}
+
+.heart {
+  font-size: 50px;
+  animation: beat 1s infinite;
+  margin: 15px 0;
+}
+
+button {
+  background: #ff4d6d;
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ff335c;
+}
+
+.hidden {
+  display: none;
+}
+
+input {
+  padding: 10px;
+  border-radius: 12px;
+  border: 2px solid #ff4d6d;
+  outline: none;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#error-msg {
+  color: red;
+  margin-top: 10px;
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD SCREEN -->
+<div id="password-screen" class="card">
+  <h1>Enter Password 💞</h1>
+  <input type="password" id="password-input" placeholder="Password">
+  <br>
+  <button id="enter-btn">Unlock 💗</button>
+  <p id="error-msg"></p>
+</div>
+
+<!-- MAIN CARD CONTENT -->
+<div id="main-card" class="card hidden">
+  <h1>Hey ❤️</h1>
+  <p>This little website is just for you</p>
+
+  <div class="heart">💖</div>
+
+  <button onclick="showMessage()">Tap Me</button>
+
+  <p id="msg" class="hidden">
+    You make my world brighter every single day 🌸<br>
+    Happy New Year ❤️
+  </p>
+</div>
+
+<script>
+// PASSWORD LOGIC
+const correctPassword = "rushisneha";
+
+document.getElementById("enter-btn").addEventListener("click", () => {
+  const input = document.getElementById("password-input").value;
+  const errorMsg = document.getElementById("error-msg");
+
+  if(input === correctPassword){
+    document.getElementById("password-screen").classList.add("hidden");
+    document.getElementById("main-card").classList.remove("hidden");
+  } else {
+    errorMsg.textContent = "❌ Wrong password, try again!";
+  }
+});
+
+// SHOW MESSAGE BUTTON
+function showMessage() {
+  document.getElementById("msg").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
