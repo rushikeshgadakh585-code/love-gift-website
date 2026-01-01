@@ -109,6 +109,14 @@ section {
   color: #ff2e63;
   font-size: 14px;
   margin: 10px 0;
+  overflow: hidden;
+}
+
+.photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
 }
 
 @keyframes beat {
@@ -178,8 +186,12 @@ section {
   <section id="sec3" style="display:none;">
     <div class="card">
       <h2>Our Moments 📸</h2>
-      <div class="photo-box">Your Photos Will Be Here</div>
-      <div class="photo-box">Add Memories ❤️</div>
+      <div class="photo-box">
+        <img src="photo1.jpg" alt="Memory 1">
+      </div>
+      <div class="photo-box">
+        <img src="photo2.jpg" alt="Memory 2">
+      </div>
       <button class="btn" onclick="nextSection3()">Final 🎆</button>
     </div>
   </section>
