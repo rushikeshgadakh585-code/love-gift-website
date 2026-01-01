@@ -1,21 +1,16 @@
-// ✅ PASSWORD LOGIC
-const correctPassword = "rushisneha";
+const PASSWORD = "rushisneha";
 
-document.getElementById("enter-btn").addEventListener("click", () => {
-  const input = document.getElementById("password-input").value;
-  const errorMsg = document.getElementById("error-msg");
-
-  if (input === correctPassword) {
-    // Hide password screen
-    document.getElementById("password-screen").classList.add("hidden");
-    // Show main card
-    document.getElementById("main-card").classList.remove("hidden");
+function checkPassword() {
+  const input = document.getElementById("passwordInput").value;
+  if (input === PASSWORD) {
+    document.getElementById("lockScreen").style.display = "none";
+    document.getElementById("mainContent").classList.remove("hidden");
   } else {
-    errorMsg.textContent = "❌ Wrong password, try again!";
+    document.getElementById("error").innerText = "❌ Wrong password";
   }
-});
+}
 
-// ✅ SHOW MESSAGE LOGIC
-function showMessage() {
-  document.getElementById("msg").classList.remove("hidden");
+function loadImage(event) {
+  const img = document.getElementById("preview");
+  img.src = URL.createObjectURL(event.target.files[0]);
 }
