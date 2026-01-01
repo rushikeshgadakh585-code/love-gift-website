@@ -101,7 +101,7 @@ input {
 
 <!-- MAIN CARD CONTENT -->
 <div id="main-card" class="card hidden">
-  <h1>Hey Sneha hi ❤️</h1>
+  <h1>Hey Sneha ❤️</h1>
   <p>This little website is just for you</p>
 
   <div class="heart">💖</div>
@@ -110,7 +110,7 @@ input {
 
   <p id="msg" class="hidden">
     You make my world brighter every single day 🌸<br>
-    Happy New Year Sonu rushi ❤️
+    Happy New Year Sonu ❤️
   </p>
 </div>
 
@@ -139,5 +139,170 @@ function showMessage() {
 </body>
 
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Just For You ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #ff9a9e, #fecfef);
+  overflow-x: hidden;
+}
+
+section {
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+h1, h2 {
+  color: #ff2e63;
+}
+
+p {
+  color: #444;
+  font-size: 16px;
+}
+
+.btn {
+  background: #ff2e63;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  max-width: 350px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  animation: fadeUp 1.5s ease;
+}
+
+.hearts span {
+  position: fixed;
+  bottom: -20px;
+  font-size: 20px;
+  animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-120vh); opacity: 0; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.photo-box {
+  width: 260px;
+  height: 260px;
+  border-radius: 20px;
+  background: #ffe3ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff2e63;
+  font-size: 14px;
+  margin: 15px 0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating Hearts -->
+<div class="hearts">
+  <span style="left:10%">💖</span>
+  <span style="left:30%">💗</span>
+  <span style="left:50%">💘</span>
+  <span style="left:70%">❤️</span>
+  <span style="left:90%">💕</span>
+</div>
+
+<!-- Section 1 -->
+<section>
+  <div class="card">
+    <h1>Hey You ❤️</h1>
+    <p>I made this little world just for you</p>
+    <button class="btn" onclick="nextSection()">Start ✨</button>
+  </div>
+</section>
+
+<!-- Section 2 -->
+<section id="sec2" style="display:none;">
+  <div class="card">
+    <h2>You Mean A Lot 💕</h2>
+    <p>
+      Every smile of yours makes my day better.<br>
+      This New Year is special because of you.
+    </p>
+    <button class="btn" onclick="nextSection2()">Next 💫</button>
+  </div>
+</section>
+
+<!-- Section 3 -->
+<section id="sec3" style="display:none;">
+  <div class="card">
+    <h2>Our Moments 📸</h2>
+    <div class="photo-box">Your Photos Will Be Here</div>
+    <div class="photo-box">Add Memories ❤️</div>
+    <button class="btn" onclick="nextSection3()">Final 🎆</button>
+  </div>
+</section>
+
+<!-- Section 4 -->
+<section id="sec4" style="display:none;">
+  <div class="card">
+    <h1>Happy New Year ❤️🎆</h1>
+    <p>
+      I wish this year brings us more laughs,<br>
+      more memories, and endless love 💖
+    </p>
+  </div>
+</section>
+
+<script>
+function nextSection() {
+  document.getElementById("sec2").style.display = "flex";
+  window.scrollTo(0, document.body.scrollHeight);
+}
+
+function nextSection2() {
+  document.getElementById("sec3").style.display = "flex";
+  window.scrollTo(0, document.body.scrollHeight);
+}
+
+function nextSection3() {
+  document.getElementById("sec4").style.display = "flex";
+  window.scrollTo(0, document.body.scrollHeight);
+}
+</script>
+
+</body>
+</html>
+
 
 
